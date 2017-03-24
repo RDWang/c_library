@@ -1,5 +1,6 @@
+
 /*
- * =====================================================================================
+   =====================================================================================
  *
  *    Copyright (C), Agioe Devices Co.,Ltd.
  *
@@ -24,7 +25,8 @@
  *      2. ...
  *
  * =====================================================================================
- */
+*/
+
 #ifndef _INCLUDE_CDATASTRUCT_TYPE_H_
 #define _INCLUDE_CDATASTRUCT_TYPE_H_
 
@@ -87,6 +89,6 @@
 typedef int      Status;
 // Boolean是布尔类型,其值是TRUE或FALSE
 typedef int      Boolean; 
-typedef  (void *)         Elemtype;
+typedef char     ElemType;
 
 #endif

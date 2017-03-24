@@ -5,10 +5,10 @@
  *
  *    Filename:  SqList.h
  *
- *    Author: Wang Lei, lwang@agioe.com   Version: 1.0  Date: 2017Äê03ÔÂ18ÈÕ 
+ *    Author: Wang Lei, lwang@agioe.com   Version: 1.0  Date: 2017å¹´03æœˆ18æ—¥ 
  *
- *    Description: ÏßĞÔ±íµÄ¶¯Ì¬·ÖÅäË³Ğò´æ´¢½á¹¹
- *                 Ë³Ğò´æ´¢ÏßĞÔ±í
+ *    Description: çº¿æ€§è¡¨çš„åŠ¨æ€åˆ†é…é¡ºåºå­˜å‚¨ç»“æ„
+ *                 é¡ºåºå­˜å‚¨çº¿æ€§è¡¨
  *
  *    Others:
  *
@@ -30,17 +30,43 @@
 #ifndef _INCLUDE_SQLIST_H_
 #define _INCLUDE_SQLIST_H_
 
-#include "CDataStruct_type.h"
+#include "CdataStruct_type.h"
 
-#define LIST_INIT_SIZE 10 // ÏßĞÔ±í´æ´¢¿Õ¼äµÄ³õÊ¼·ÖÅäÁ¿
-#define LISTINCREMENT 2 // ÏßĞÔ±í´æ´¢¿Õ¼äµÄ·ÖÅäÔöÁ¿
 
-struct SqList
+#define LIST_INIT_SIZE 10 // çº¿æ€§è¡¨å­˜å‚¨ç©ºé—´çš„åˆå§‹åˆ†é…é‡
+#define LISTINCREMENT 2 // çº¿æ€§è¡¨å­˜å‚¨ç©ºé—´çš„åˆ†é…å¢é‡
+
+//å®šä¹‰çº¿æ€§è¡¨çš„æ•°æ®ç»“æ„
+typedef struct sqlist
 {
-    ElemType *elem; // ´æ´¢¿Õ¼ä»ùÖ·
-    int length; // µ±Ç°³¤¶È
-    int listsize; // µ±Ç°·ÖÅäµÄ´æ´¢ÈİÁ¿(ÒÔsizeof(ElemType)Îªµ¥Î»)
-};
+    ElemType *elem; // å­˜å‚¨ç©ºé—´åŸºå€
+    int length; // å½“å‰é•¿åº¦
+    int listsize; // å½“å‰åˆ†é…çš„å­˜å‚¨å®¹é‡(ä»¥sizeof(ElemType)ä¸ºå•ä½)
+}SqList;
+//typedef struct sqlist SqList;
 
+//å¯¼å‡ºé¡ºåºå­˜å‚¨æ–¹å¼çº¿æ€§è¡¨çš„æ‰€æœ‰å‡½æ•°æ¥å£
+extern Status InitList(SqList *);
+extern Status DestroyList(SqList *L);
+extern Status ClearList(SqList *L);
+extern Status ListEmpty(SqList L);
+extern int ListLength(SqList L);
+extern Status GetElem(SqList L,int i,ElemType *e);
+extern int LocateElem(SqList L,ElemType e,Status(*compare)(ElemType,ElemType));
+extern Status PriorElem(SqList L,ElemType cur_e,ElemType *pre_e);
+extern Status NextElem(SqList L,ElemType cur_e,ElemType *next_e);
+extern Status ListInsert(SqList *L,int i,ElemType e);
+extern Status ListDelete(SqList *L,int i,ElemType *e);
+extern Status ListTraverse(SqList L,void(*vi)(ElemType*));
+extern void InsertAscend(SqList *L,ElemType e);
+extern void InsertDescend(SqList *L,ElemType e);
+extern Status HeadInsert(SqList *L,ElemType e);
+extern Status EndInsert(SqList *L,ElemType e);
+extern Status DeleteFirst(SqList *L,ElemType *e);
+extern Status DeleteTail(SqList *L,ElemType *e);
+extern Status DeleteElem(SqList *L,ElemType e);
+extern Status ReplaceElem(SqList L,int i,ElemType e);
+extern Status CreatAscend(SqList *L,int n);
+extern Status CreatDescend(SqList *L,int n);
 
 #endif

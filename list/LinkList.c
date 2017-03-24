@@ -28,28 +28,28 @@
 #include "LinkList.h"
 
 
- Status InitList(LinkList *L)
+Status InitList(LinkList *L)
  { // 操作结果：构造一个空的线性表L
-   *L=(LinkList)malloc(sizeof(LNode)); // 产生头结点,并使L指向此头结点
+   *L=(LinkList)malloc(sizeof(struct LNode)); // 产生头结点,并使L指向此头结点
    if(!*L) // 存储分配失败
      return ERROR;
-   *L->next=NULL; // 指针域为空
+   (*L)->next=NULL; // 指针域为空
    return OK;
  }
 
- Status DestroyList(LinkList *L)
+Status DestroyList(LinkList *L)
  { // 初始条件：线性表L已存在。操作结果：销毁线性表L
    LinkList q;
    while(*L)
    {
-     q=*L->next;
+     q=(*L)->next;
      free(*L);
      *L=q;
    }
    return OK;
  }
 
- Status ClearList(LinkList L) // 不改变L
+Status ClearList(LinkList L) // 不改变L
  { // 初始条件：线性表L已存在。操作结果：将L重置为空表
    LinkList p,q;
    p=L->next; // p指向第一个结点
@@ -63,7 +63,7 @@
    return OK;
  }
 
- Status ListEmpty(LinkList L)
+Status ListEmpty(LinkList L)
  { // 初始条件：线性表L已存在。操作结果：若L为空表，则返回TRUE，否则返回FALSE
    if(L->next) // 非空
      return FALSE;
@@ -160,7 +160,7 @@
    }
    if(!p||j>i-1) // i小于1或者大于表长
      return ERROR;
-   s=(LinkList)malloc(sizeof(LNode)); // 生成新结点
+   s=(LinkList)malloc(sizeof(struct LNode)); // 生成新结点
    s->data=e; // 插入L中
    s->next=p->next;
    p->next=s;
@@ -208,7 +208,7 @@
      q=p;
      p=p->next;
    }
-   q->next=(LinkList)malloc(sizeof(LNode)); // 插在q后
+   q->next=(LinkList)malloc(sizeof(struct LNode)); // 插在q后
    q->next->data=e;
    q->next->next=p;
  }
@@ -221,7 +221,7 @@
      q=p;
      p=p->next;
    }
-   q->next=(LinkList)malloc(sizeof(LNode)); // 插在q后
+   q->next=(LinkList)malloc(sizeof(struct LNode)); // 插在q后
    q->next->data=e;
    q->next->next=p;
  }
@@ -229,7 +229,7 @@
  Status HeadInsert(LinkList L,ElemType e)
  { // 初始条件：线性表L已存在。操作结果：在L的头部插入新的数据元素e,作为链表的第一个元素
    LinkList s;
-   s=(LinkList)malloc(sizeof(LNode)); // 生成新结点
+   s=(LinkList)malloc(sizeof(struct LNode)); // 生成新结点
    s->data=e; // 给结点赋值
    s->next=L->next; // 插在表头
    L->next=s;
@@ -241,7 +241,7 @@
    LinkList p=L;
    while(p->next) // 使p指向表尾元素
      p=p->next;
-   p->next=(LinkList)malloc(sizeof(LNode)); // 在表尾生成新结点
+   p->next=(LinkList)malloc(sizeof(struct LNode)); // 在表尾生成新结点
    p->next->data=e; // 给新结点赋值
    p->next->next=NULL; // 表尾
    return OK;
@@ -322,16 +322,16 @@
      return ERROR;
    InitList(L);
    printf("请输入%d个元素:\n",n);
-   s=(LinkList)malloc(sizeof(LNode)); // 第一个结点
+   s=(LinkList)malloc(sizeof(struct LNode)); // 第一个结点
    scanf("%d",&s->data);
    s->next=NULL;
-   *L->next=s;
+   (*L)->next=s;
    for(j=1;j<n;j++)
    {
-     s=(LinkList)malloc(sizeof(LNode)); // 其余结点
+     s=(LinkList)malloc(sizeof(struct LNode)); // 其余结点
      scanf("%d",&s->data);
      q=*L;
-     p=*L->next;
+     p=(*L)->next;
      while(p&&p->data<s->data) // p没到表尾，且所指元素值小于新值
      {
        q=p;
@@ -351,16 +351,16 @@
      return ERROR;
    InitList(L);
    printf("请输入%d个元素:\n",n);
-   s=(LinkList)malloc(sizeof(LNode)); // 第一个结点
+   s=(LinkList)malloc(sizeof(struct LNode)); // 第一个结点
    scanf("%d",&s->data);
    s->next=NULL;
-   *L->next=s;
+   (*L)->next=s;
    for(j=1;j<n;j++)
    {
-     s=(LinkList)malloc(sizeof(LNode)); // 其余结点
+     s=(LinkList)malloc(sizeof(struct LNode)); // 其余结点
      scanf("%d",&s->data);
      q=*L;
-     p=*L->next;
+     p=(*L)->next;
      while(p&&p->data>s->data) // p没到表尾，且所指元素值大于新值
      {
        q=p;

@@ -32,7 +32,7 @@ Status InitList(DuLinkList *L)
     *L=(DuLinkList)malloc(sizeof(DuLNode));
     if(*L)
     {
-        *L->next=*L->prior=*L;
+        (*L)->next=(*L)->prior=*L;
         return OK;
     }
     else
@@ -43,7 +43,7 @@ Status InitList(DuLinkList *L)
 
 Status DestroyList(DuLinkList *L)
 { // 操作结果：销毁双向循环链表L
-    DuLinkList q,p=*L->next; // p指向第一个结点
+    DuLinkList q,p=(*L)->next; // p指向第一个结点
     while(p!=*L) // p没到表头
     {
         q=p->next;

@@ -31,11 +31,27 @@
 
 #include "CdataStruct_type.h"
 
+//定义线性表的数据结构
 typedef struct DuLNode
 {
     ElemType data;
-    DuLNode *prior,*next;
+    struct DuLNode *prior,*next;
 }DuLNode,*DuLinkList;
 
+//导出双向循环线性表的所有函数接口
+Status InitList(DuLinkList *L);
+Status DestroyList(DuLinkList *L);
+Status ClearList(DuLinkList L);
+Status ListEmpty(DuLinkList L);
+int ListLength(DuLinkList L);
+Status GetElem(DuLinkList L,int i,ElemType *e);
+int LocateElem(DuLinkList L,ElemType e,Status(*compare)(ElemType,ElemType));
+Status PriorElem(DuLinkList L,ElemType cur_e,ElemType *pre_e);
+Status NextElem(DuLinkList L,ElemType cur_e,ElemType *next_e);
+DuLinkList GetElemP(DuLinkList L,int i);
+Status ListInsert(DuLinkList L,int i,ElemType e);
+Status ListDelete(DuLinkList L,int i,ElemType *e);
+void ListTraverse(DuLinkList L,void(*visit)(ElemType));
+void ListTraverseBack(DuLinkList L,void(*visit)(ElemType));
 
 #endif

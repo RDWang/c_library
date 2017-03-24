@@ -33,7 +33,7 @@ Status MakeNode(Link *p,ElemType e)
     *p=(Link)malloc(sizeof(LNode));
     if(!*p)
         return ERROR;
-    *p->data=e;
+    (*p)->data=e;
     return OK;
 }
 
@@ -103,7 +103,7 @@ Status DelFirst(LinkList *L,Link h,Link *q) // 形参增加L,因为需修改L
     *q=h->next;
     if(*q) // 链表非空
     {
-        h->next=*q->next;
+        h->next=(*q)->next;
         if(!h->next) // 删除尾结点
             L->tail=h; // 修改尾指针
         L->len--;
@@ -165,7 +165,7 @@ Status InsBefore(LinkList *L,Link *p,Link s)
 { // 已知p指向线性链表L中的一个结点，将s所指结点插入在p所指结点之前，
     // 并修改指针p指向新插入的结点
     Link q;
-    q=PriorPos(L,p); // q是p的前驱
+    q=PriorPos(*L,*p); // q是p的前驱
     if(!q) // p无前驱
         q=L->head;
     s->next=*p;
@@ -180,9 +180,9 @@ Status InsAfter(LinkList *L,Link *p,Link s)
     // 并修改指针p指向新插入的结点
     if(*p==L->tail) // 修改尾指针
         L->tail=s;
-    s->next=p->next;
-    p->next=s;
-    p=s;
+    s->next=(*p)->next;
+    (*p)->next=s;
+    *p=s;
     L->len++;
     return OK;
 }
@@ -237,12 +237,12 @@ Status LocatePos(LinkList L,int i,Link *p)
     {
         *p=L.head;
         for(j=1;j<=i;j++)
-            *p=*p->next;
+            *p=(*p)->next;
         return OK;
     }
 }
 
-Position LocateElem(LinkList L,ElemType e,Status (*compare)(ElemType,ElemType))
+Link LocateElem(LinkList L,ElemType e,Status (*compare)(ElemType,ElemType))
 { // 返回线性链表L中第1个与e满足函数compare()判定关系的元素的位置，
     // 若不存在这样的元素，则返回NULL
     Link p=L.head;
@@ -285,7 +285,7 @@ Status OrderInsert(LinkList *L,ElemType e,int (*comp)(ElemType,ElemType))
     return OK;
 }
 
-Status LocateElem(LinkList L,ElemType e,Link *q,int(*compare)(ElemType,ElemType))
+Status OrderLocateElem(LinkList L,ElemType e,Link *q,int(*compare)(ElemType,ElemType))
 { // 若升序链表L中存在与e满足判定函数compare()取值为0的元素，则q指示L中
     // 第一个值为e的结点的位置，并返回TRUE；否则q指示第一个与e满足判定函数
     // compare()取值>0的元素的前驱的位置。并返回FALSE。（用于一元多项式）
