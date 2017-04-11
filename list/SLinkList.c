@@ -1,11 +1,11 @@
 /*
  * =====================================================================================
  *      
- *    Copyright (C), Agioe Devices Co.,Ltd.
+ *    Copyright (C) 2009-2017  Wang Lei
  *
  *    Filename:  SLinkList.c
  *
- *    Author: Wang Lei, lwang@agioe.com   Version: 1.0  Date: 2017年03月18日 
+ *    Author: Wang Lei, linfeng315@163.com   Version: 1.0  Date: 2017年03月18日 
  *
  *    Description:  // bo2-3.cpp 实现算法2.15、2.16的程序 (数据结构由c2-3.h定义) (3个)
  *

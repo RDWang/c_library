@@ -1,0 +1,25 @@
+#Makefile文件
+
+#定义全局的编译选项
+CC ?=gcc
+CC-CFLAG += -Wall
+LIB-DIR ?= ../lib
+
+#处理中间变量
+OBJECT-TMP = ${patsubst %.so,%.o,${SHARE-OBJ}}
+SRC-TMP = ${patsubst %.so,%.c,${SHARE-OBJ}}
+INCLUDE-FILE = ${patsubst %.so,%.h,${SHARE-OBJ}}
+
+%.so:%.o
+	${CC}  -L../lib -shared -o $@ $<
+
+%.o:%.c
+	${CC} -I../ -I../lib/ ${CC-CFLAG} -o $@ -c $<
+
+mv_obj:
+	mkdir -p ${LIB-DIR}
+	cp -fr ${SHARE-OBJ} ${LIB-DIR}
+	cp -fr ${INCLUDE-FILE} ${LIB-DIR}
+
+clean:
+	rm -fr *.o ${SHARE-OBJ}

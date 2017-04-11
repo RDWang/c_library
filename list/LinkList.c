@@ -1,11 +1,11 @@
 /*
  * =====================================================================================
  *      
- *    Copyright (C), Agioe Devices Co.,Ltd.
+ *    Copyright (C) 2009-2017  Wang Lei
  *
  *    Filename:  LinkList.c
  *
- *    Author: Wang Lei, lwang@agioe.com   Version: 1.0  Date: 2017年03月18日 
+ *    Author: Wang Lei, linfeng315@163.com   Version: 1.0  Date: 2017年03月18日 
  *
  *    Description:  单链表线性表的基本操作(12个)+单链表线性表的扩展操作(11个)
  *

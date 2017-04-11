@@ -1,11 +1,11 @@
 /*
  * =====================================================================================
  *      
- *    Copyright (C), Agioe Devices Co.,Ltd.
+ *    Copyright (C) 2009-2017  Wang Lei
  *
  *    Filename:  RealLinkList.c
  *
- *    Author: Wang Lei, lwang@agioe.com   Version: 1.0  Date: 2017年03月18日 
+ *    Author: Wang Lei, linfeng315@163.com   Version: 1.0  Date: 2017年03月18日 
  *
  *    Description:  // 单向循环线性表(存储结构由c2-4.h定义)的基本操作(14个)
  *

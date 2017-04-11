@@ -1,11 +1,11 @@
 /*
  * =====================================================================================
  *      
- *    Copyright (C), Agioe Devices Co.,Ltd.
+ *    Copyright (C) 2009-2017  Wang Lei
  *
  *    Filename:  SqList.c
  *
- *    Author: Wang Lei, lwang@agioe.com   Version: 1.0  Date: 2017年03月18日 
+ *    Author: Wang Lei, linfeng315@163.com   Version: 1.0  Date: 2017年03月18日 
  *
  *    Description:  顺序表示的线性表的基本操作(12个)+扩展操作(10个)
  *

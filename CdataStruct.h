@@ -1,11 +1,11 @@
 /*
  * =====================================================================================
  *
- *    Copyright (C), Agioe Devices Co.,Ltd.
+ *    Copyright (C) 2009-2017  Wang Lei
  *
  *    Filename:  CDataStruct.h
  *
- *    Author: Wang Lei, lwang@agioe.com   Version: 1.0  Date: 2017年03月16日 
+ *    Author: Wang Lei, linfeng315@163.com   Version: 1.0  Date: 2017年03月16日 
  *
  *    Description:  c语言常用库头文件，包括堆栈、队列、符号表、树和图结构定义及操作
  *

@@ -1,11 +1,11 @@
 /*
  * =====================================================================================
  *
- *    Copyright (C), Agioe Devices Co.,Ltd.
+ *    Copyright (C) 2009-2017  Wang Lei
  *
  *    Filename:  SqList.h
  *
- *    Author: Wang Lei, lwang@agioe.com   Version: 1.0  Date: 2017年03月18日 
+ *    Author: Wang Lei, linfeng315@163.com   Version: 1.0  Date: 2017年03月18日 
  *
  *    Description: 线性表的动态分配顺序存储结构
  *                 顺序存储线性表
@@ -43,9 +43,16 @@ typedef struct sqlist
     int length; // 当前长度
     int listsize; // 当前分配的存储容量(以sizeof(ElemType)为单位)
 }SqList;
-//typedef struct sqlist SqList;
 
 //导出顺序存储方式线性表的所有函数接口
+
+/************************************************************************************ 
+ * Function Name: InitList
+ * Function Description:  
+ * Inputs:
+ * Outputs:
+ * Notes:
+ * **********************************************************************************/
 extern Status InitList(SqList *);
 extern Status DestroyList(SqList *L);
 extern Status ClearList(SqList *L);

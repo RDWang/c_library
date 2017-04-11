@@ -1,11 +1,11 @@
 /*
  * =====================================================================================
  *
- *    Copyright (C), Agioe Devices Co.,Ltd.
+ *    Copyright (C) 2009-2017  Wang Lei
  *
  *    Filename:  DuLinkList.h
  *
- *    Author: Wang Lei, lwang@agioe.com   Version: 1.0  Date: 2017年03月18日 
+ *    Author: Wang Lei, linfeng315@163.com   Version: 1.0  Date: 2017年03月18日 
  *
  *    Description:  // c2-4.h 线性表的双向链表存储结构
  *                  双向循环链表

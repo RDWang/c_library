@@ -1,11 +1,11 @@
 /*
  * =====================================================================================
  *      
- *    Copyright (C), Agioe Devices Co.,Ltd.
+ *    Copyright (C) 2009-2017  Wang Lei
  *
  *    Filename:  SLinkListAttr.c
  *
- *    Author: Wang Lei, lwang@agioe.com   Version: 1.0  Date: 2017年03月21日 
+ *    Author: Wang Lei, linfeng315@163.com   Version: 1.0  Date: 2017年03月21日 
  *
  *    Description:  
  *

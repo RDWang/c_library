@@ -2,11 +2,11 @@
 /*
    =====================================================================================
  *
- *    Copyright (C), Agioe Devices Co.,Ltd.
+ *    Copyright (C) 2009-2017  Wang Lei 
  *
  *    Filename:  CdataStruct_type.h
  *
- *    Author: Wang Lei, lwang@agioe.com   Version: 1.0  Date: 2017年03月18日 
+ *    Author: Wang Lei, linfeng315@163.com   Version: 1.0  Date: 2017年03月18日 
  *
  *    Description:  基本的数据类型在此定义，同时当实际使用时将相应的数据结构类型
  *                  填充到此结构体中
@@ -79,6 +79,7 @@
 //// 宽字符分类和映射支持
 //#include <wctype.h>
 
+//所有库文件公用定义
 #define TRUE              (1)
 #define FALSE             (0)
 #define OK                (0)
@@ -89,6 +90,19 @@
 typedef int      Status;
 // Boolean是布尔类型,其值是TRUE或FALSE
 typedef int      Boolean; 
-typedef char     ElemType;
 
+//特定库数据定义，用户更改此定义
+typedef char     ElemType; //链表使用
+typedef char     SElemType; //堆栈使用
+typedef void *   QElemType; //队列使用
+
+typedef char     AtomType; //广义表定义用户数据
+
+//定义树结构使用的数据
+typedef char    TElemType;
+
+//图相关数据定义
+typedef char*   VertexType;
+typedef int    VRType;
+typedef int   InfoType;
 #endif
